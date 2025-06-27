@@ -14,7 +14,13 @@ const {
   getLyricApi,
   getTopApi,
 } = require("../controller/apiController");
-const { postUsers, getApiUser } = require("../controller/useController");
+const {
+  postUsers,
+  getApiUser,
+  loginUser,
+  getSongLike,
+} = require("../controller/useController");
+const { checkToken } = require("../middlewares/middleWares");
 const router = express.Router();
 router.get("/user", getUserApi);
 router.get("/home", getInfoApi);
@@ -29,6 +35,8 @@ router.get("/searchSong", getSearchSongApi);
 router.get("/artist", getArtistApi);
 router.get("/lyric", getLyricApi);
 router.get("/top100", getTopApi);
-router.post("/login", postUsers);
+router.post("/register", postUsers);
 router.get("/getUser", getApiUser);
+router.post("/login", loginUser);
+router.get("/SongLike", checkToken, getSongLike);
 module.exports = router;
