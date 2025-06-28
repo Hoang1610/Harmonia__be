@@ -19,7 +19,7 @@ app.use("/v1/api", apiRouter);
 (async () => {
   try {
     // await connection();
-    app.listen(port, hostname, () => {
+    app.listen(port, () => {
       console.log(`${port} dang chay`);
     });
   } catch (err) {
