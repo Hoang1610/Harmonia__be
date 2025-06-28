@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const connection = require("./config/database");
+// const connection = require("./config/database");
 const configViewEngine = require("./config/viewEngine");
 const app = express();
 app.use(express.json());
@@ -18,7 +18,7 @@ app.use(api);
 app.use("/v1/api", apiRouter);
 (async () => {
   try {
-    await connection();
+    // await connection();
     app.listen(port, hostname, () => {
       console.log(`${port} dang chay`);
     });
